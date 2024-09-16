@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/welcome_background">
+
+    <!-- App logo or a nice water drop icon with circular shape -->
+    <ImageView
+        android:id="@+id/welcome_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="32dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_water_drop"
+        android:background="@drawable/rounded_image" /> <!-- Apply circular shape -->
+
+    <!-- Welcome message with larger font size and text styling -->
+    <TextView
+        android:id="@+id/welcome_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="Welcome to Water Reminder!"
+        android:textColor="#263794"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- A secondary message to make it more engaging -->
+    <TextView
+        android:id="@+id/subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Stay hydrated and healthy."
+        android:textColor="#4758B5"
+        android:textSize="24sp" />
+
+    <!-- Next button with rounded corners, padding, and shadow -->
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:text="Get Started"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+</LinearLayout>
