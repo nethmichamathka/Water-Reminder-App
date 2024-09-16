@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <!-- Transparent gradient background -->
+            <!-- Gradient background using your color palette -->
             <gradient
                 android:angle="90"
-                android:startColor="#6DD5FA"
-                android:endColor="#2980B9"
+                android:startColor="#F5EFEB"
+                android:endColor="#C8D9E6"
                 android:type="linear" />
-            <!-- Applying transparency to the gradient -->
-            <alpha android:alpha="0.8" /> <!-- Adjust alpha for transparency (0 to 1) -->
+            <alpha android:alpha="0.9" /> <!-- Adjust transparency -->
         </shape>
     </item>
 </layer-list>

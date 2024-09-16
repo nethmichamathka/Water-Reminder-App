@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#00BCD4" /> <!-- Button background color (Teal) -->
+    <solid android:color="#567C8D" /> <!-- Muted blue-gray button color -->
     <corners android:radius="20dp" /> <!-- Rounded corners -->
     <padding
         android:left="10dp"
         android:top="10dp"
         android:right="10dp"
         android:bottom="10dp" />
-    <shadowColor android:color="#80000000" /> <!-- Optional shadow (slightly transparent) -->
+    <shadowColor android:color="#80000000" /> <!-- Optional shadow -->
     <shadowDx android:offsetX="4" />
     <shadowDy android:offsetY="4" />
     <shadowRadius android:radius="6" />

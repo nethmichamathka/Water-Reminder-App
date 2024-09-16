@@ -7,15 +7,14 @@
     android:padding="24dp"
     android:background="@drawable/welcome_background">
 
-    <!-- App logo or a nice water drop icon with circular shape -->
+    <!-- App logo or a nice water drop icon \ -->
     <ImageView
         android:id="@+id/welcome_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="164dp"
+        android:layout_height="151dp"
         android:layout_marginBottom="32dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_water_drop"
-        android:background="@drawable/rounded_image" /> <!-- Apply circular shape -->
+        android:src="@drawable/ic_water_drop" /> <!-- Apply circular shape -->
 
     <!-- Welcome message with larger font size and text styling -->
     <TextView
@@ -26,7 +25,7 @@
         android:fontFamily="serif"
         android:gravity="center"
         android:text="Welcome to Water Reminder!"
-        android:textColor="#263794"
+        android:textColor="#2F4156"
         android:textSize="28sp"
         android:textStyle="bold" />
 
@@ -38,7 +37,7 @@
         android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="Stay hydrated and healthy."
-        android:textColor="#4758B5"
+        android:textColor="#567C8D"
         android:textSize="24sp" />
 
     <!-- Next button with rounded corners, padding, and shadow -->
@@ -50,6 +49,6 @@
         android:elevation="4dp"
         android:padding="16dp"
         android:text="Get Started"
-        android:textColor="#FFFFFF"
+        android:textColor="#2F4156"
         android:textSize="18sp" />
 </LinearLayout>
