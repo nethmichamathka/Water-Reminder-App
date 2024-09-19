@@ -14,7 +14,8 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var waterImageView: ImageView
     private lateinit var reminderTextView: TextView
     private lateinit var clockButton: Button
-    private lateinit var todoButton: Button  // Declare the todo button
+    private lateinit var todoButton: Button
+    private lateinit var hydrationReminderButton: Button  // Button for hydration reminder
     private var progressAmount = 0
     private val maxWaterAmount = 1830 // Example maximum goal in ml
 
@@ -27,6 +28,7 @@ class DashboardActivity : AppCompatActivity() {
         reminderTextView = findViewById(R.id.reminder_text)
         clockButton = findViewById(R.id.button_clock) // Initialize the clock button
         todoButton = findViewById(R.id.todo) // Initialize the todo button
+        hydrationReminderButton = findViewById(R.id.button_hydration_reminder) // Initialize the hydration reminder button
 
         progressBar.max = maxWaterAmount
         updateReminderText()
@@ -37,15 +39,19 @@ class DashboardActivity : AppCompatActivity() {
 
         // Set the click listener for the "TODO" button
         todoButton.setOnClickListener {
-            // Navigate to the Todo List activity
             val intent = Intent(this, TodoActivity::class.java)
             startActivity(intent)
         }
 
         // Set the click listener for the "Clock" button
         clockButton.setOnClickListener {
-            // Navigate to the Clock activity
             val intent = Intent(this, ClockActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Set the click listener for the "Hydration Reminder" button
+        hydrationReminderButton.setOnClickListener {
+            val intent = Intent(this, HydrationReminderActivity::class.java)
             startActivity(intent)
         }
     }

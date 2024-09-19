@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="@color/background_color">
+
+    <!-- Reminder TextView -->
+    <TextView
+        android:id="@+id/reminder_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hydration Reminder is Active!"
+        android:textSize="20sp"
+        android:textColor="@color/primary_text_color"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Description TextView -->
+    <TextView
+        android:id="@+id/description_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You will be reminded every 15 minutes to drink water."
+        android:textSize="16sp"
+        android:textColor="@color/primary_text_color"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Stop Reminder Button -->
+    <Button
+        android:id="@+id/stop_reminder_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Reminder"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/primary_text_color"
+        android:padding="12dp" />
+</LinearLayout>

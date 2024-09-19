@@ -63,7 +63,7 @@
 
     <!-- dashboard  -->
 
-    <string name="water_reminder_title">WATER REMINDER</string>
+    <string name="water_reminder_title">PROGRESS</string>
 
     <string name="reminder_text">You need to drink another 1830ml to reach the target</string>
 
@@ -72,7 +72,7 @@
 
     <string name="button_clock">Clock</string>
     <string name="button_Todo">Todo</string>
-    <string name="button_history">History</string>
+    <string name="timer">Timer</string>
 
     <string name="history_text">History</string>
 
@@ -110,6 +110,12 @@
 
     <!-- Text for Add Task button -->
     <string name="add_task">Add Task</string>
+
+    <!-- reminder timer -->
+    <string name="hydration_reminder_title">Set Hydration Reminder</string>
+    <string name="interval_hint">Enter interval in minutes</string>
+    <string name="interval_unit">minutes</string>
+    <string name="save_reminder">Save Reminder</string>
 
 
 
