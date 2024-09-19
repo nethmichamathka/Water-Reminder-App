@@ -10,11 +10,11 @@ import androidx.appcompat.app.AppCompatActivity
 
 class DashboardActivity : AppCompatActivity() {
 
-    // Declare variables for the ProgressBar, ImageView, and TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var waterImageView: ImageView
     private lateinit var reminderTextView: TextView
     private lateinit var clockButton: Button
+    private lateinit var todoButton: Button  // Declare the todo button
     private var progressAmount = 0
     private val maxWaterAmount = 1830 // Example maximum goal in ml
 
@@ -22,55 +22,51 @@ class DashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        // Initialize the ProgressBar, ImageView, and TextView
         progressBar = findViewById(R.id.progressBar)
         waterImageView = findViewById(R.id.imageView2)
         reminderTextView = findViewById(R.id.reminder_text)
-        clockButton = findViewById(R.id.button_clock) // Initialize the button
+        clockButton = findViewById(R.id.button_clock) // Initialize the clock button
+        todoButton = findViewById(R.id.todo) // Initialize the todo button
 
-        // Set max value for the ProgressBar
         progressBar.max = maxWaterAmount
-
-        // Set the initial text for remaining water
         updateReminderText()
 
-        // Set the click listener on the ImageView (to act like a button)
         waterImageView.setOnClickListener {
-            // Increment progress (example amount of 250ml)
             increaseProgress(250)
         }
 
-        // Set the click listener on the Clock Button
+        // Set the click listener for the "TODO" button
+        todoButton.setOnClickListener {
+            // Navigate to the Todo List activity
+            val intent = Intent(this, TodoActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Set the click listener for the "Clock" button
         clockButton.setOnClickListener {
-            // Navigate to ClockActivity
+            // Navigate to the Clock activity
             val intent = Intent(this, ClockActivity::class.java)
             startActivity(intent)
         }
     }
 
-    // Function to increase the ProgressBar
     private fun increaseProgress(amount: Int) {
         progressAmount += amount
 
-        // Ensure the progress doesn't exceed the max limit
         if (progressAmount > maxWaterAmount) {
             progressAmount = maxWaterAmount
         }
 
-        // Update the ProgressBar
         progressBar.progress = progressAmount
-
-        // Update the reminder text for remaining water
         updateReminderText()
     }
 
-    // Function to update the reminder text based on the progress
     private fun updateReminderText() {
         val remainingAmount = maxWaterAmount - progressAmount
-        if (remainingAmount > 0) {
-            reminderTextView.text = "You need to drink another ${remainingAmount}ml to reach the target"
+        reminderTextView.text = if (remainingAmount > 0) {
+            "You need to drink another ${remainingAmount}ml to reach the target"
         } else {
-            reminderTextView.text = "Congratulations! You've reached your water goal!"
+            "Congratulations! You've reached your water goal!"
         }
     }
 }

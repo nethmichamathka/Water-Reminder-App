@@ -9,5 +9,8 @@
     <!-- Button background color -->
     <color name="button_background_color">#7BBBE5</color>
 
+    <color name="light_color">#C4E6F8</color>
+
+
 
 </resources>

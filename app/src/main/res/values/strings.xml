@@ -84,7 +84,7 @@
     <string name="alarm_time_label2">10:00 AM</string>
     <string name="alarm_time_label3">11:00 AM</string>
     <string name="alarm_time_label4">12:00 AM</string>
-    <string name="alarm_time_label5">16:41 PM</string>
+    <string name="alarm_time_label5">22:35 PM</string>
 
 
 
@@ -95,6 +95,21 @@
 
     <!-- Expandable Dropdown Description (optional) -->
     <string name="expand_more_description">Expand for more details</string>
+
+    <!-- To do   -->
+    <string name="todo_title">ADD YOUR WATER GOALS</string>
+
+
+    <!-- note  -->
+    <string name="note_hint">Enter your note here</string>
+    <string name="save_note">Save</string>
+    <!-- Hint for note content EditText -->
+
+    <!-- Hint for task input EditText -->
+    <string name="task_hint">Enter a task...</string>
+
+    <!-- Text for Add Task button -->
+    <string name="add_task">Add Task</string>
 
 
 

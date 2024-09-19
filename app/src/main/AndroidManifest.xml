@@ -24,6 +24,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </receiver>
 
@@ -48,6 +50,9 @@
         <activity android:name=".WakeupActivity" />
         <activity android:name=".BedActivity" />
         <activity android:name=".DashboardActivity" />
+        <activity android:name=".TodoActivity" />
+        <activity android:name=".DialogAddNoteActivity" />
+        <activity android:name=".TodoListActivity" />
 
         <!-- Ensure ClockActivity is declared only once -->
         <activity
@@ -56,6 +61,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
     </application>
