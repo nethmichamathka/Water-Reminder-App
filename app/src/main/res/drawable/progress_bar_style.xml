@@ -1,0 +1,22 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background of ProgressBar -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="12dp" />
+            <solid android:color="@color/primary_text_color" />
+        </shape>
+    </item>
+
+    <!-- Progress of ProgressBar -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="12dp" />
+                <gradient
+                    android:startColor="@color/button_background_color"
+                    android:endColor="@color/primary_text_color"
+                    android:angle="270" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

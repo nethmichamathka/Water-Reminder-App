@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/background_color">
+
+    <!-- Sign Up title -->
+    <TextView
+        android:id="@+id/signup_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_title"
+        android:textSize="32sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"/>
+
+    <!-- First input field -->
+    <EditText
+        android:id="@+id/input_name_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_name"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/primary_text_color"
+        android:textColorHint="@color/primary_text_color"
+        android:textSize="18sp" />
+
+    <!-- Second input field -->
+    <EditText
+        android:id="@+id/input_name_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:hint="@string/hint_email"
+        android:padding="16dp"
+        android:textColor="@color/primary_text_color"
+        android:textColorHint="@color/primary_text_color"
+        android:textSize="18sp" />
+
+    <!-- Third input field -->
+    <EditText
+        android:id="@+id/input_name_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:hint="@string/hint_password"
+        android:padding="16dp"
+        android:textColor="@color/primary_text_color"
+        android:textColorHint="@color/primary_text_color"
+        android:textSize="18sp" />
+
+    <!-- Sign Up Button -->
+    <Button
+        android:id="@+id/signup_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signup_button_text"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/primary_text_color"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:elevation="4dp"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/splash_image"
+        android:layout_width="469dp"
+        android:layout_height="210dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/splash_image_description"
+        android:src="@drawable/splashdrop" />
+
+</LinearLayout>

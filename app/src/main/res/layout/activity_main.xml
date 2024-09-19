@@ -4,51 +4,54 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp"
-    android:background="@drawable/welcome_background">
+    android:background="@color/background_color"
+    android:padding="24dp">
 
-    <!-- App logo or a nice water drop icon \ -->
+    <!-- Header text: SPLASH -->
+    <TextView
+        android:id="@+id/header_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="@string/header_text"
+        android:textColor="@color/primary_text_color"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"
+        android:letterSpacing="0.1"
+        android:gravity="center" />
+
+    <!-- Water drop image with hands up -->
     <ImageView
-        android:id="@+id/welcome_image"
-        android:layout_width="164dp"
-        android:layout_height="151dp"
-        android:layout_marginBottom="32dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_water_drop" /> <!-- Apply circular shape -->
+        android:id="@+id/water_image"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:src="@drawable/ic_water_drop_character"
+        android:contentDescription="@string/water_image_description"
+        android:layout_marginBottom="24dp" />
 
-    <!-- Welcome message with larger font size and text styling -->
+    <!-- Subheading text: Drink More -->
     <TextView
-        android:id="@+id/welcome_message"
+        android:id="@+id/subheading_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="serif"
+        android:text="@string/subheading_text"
+        android:textColor="@color/primary_text_color"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Welcome to Water Reminder!"
-        android:textColor="#2F4156"
-        android:textSize="28sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="32dp" />
 
-    <!-- A secondary message to make it more engaging -->
-    <TextView
-        android:id="@+id/subtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:gravity="center"
-        android:text="Stay hydrated and healthy."
-        android:textColor="#567C8D"
-        android:textSize="24sp" />
-
-    <!-- Next button with rounded corners, padding, and shadow -->
+    <!-- Button: Let's Splash -->
     <Button
-        android:id="@+id/button_next"
-        android:layout_width="200dp"
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:elevation="4dp"
         android:padding="16dp"
-        android:text="Get Started"
-        android:textColor="#2F4156"
-        android:textSize="18sp" />
+        android:text="@string/splash_button_text"
+        android:textColor="@color/primary_text_color"
+        android:background="@drawable/rounded_button"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif" />
 </LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background_color"
+    android:padding="24dp">
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/permission_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bed_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text_color"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Shield Icon -->
+    <ImageView
+        android:id="@+id/shield_icon"
+        android:layout_width="288dp"
+        android:layout_height="296dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/shield_icon_description"
+        android:src="@drawable/bed" />
+
+    <!-- TextClock (Optional) -->
+
+    <!-- TextView to display the selected wakeup time -->
+    <TextView
+        android:id="@+id/bed_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bed_time"
+        android:textSize="22sp"
+        android:textColor="@color/primary_text_color"
+        android:layout_marginTop="16dp" />
+
+    <!-- Button to select wakeup time -->
+    <Button
+        android:id="@+id/select_bed_time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_bedtime"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/primary_text_color"
+        android:layout_marginTop="16dp" />
+
+    <!-- Next Button -->
+    <Button
+        android:id="@+id/buttonbed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/button_text"
+        android:textColor="@color/primary_text_color"
+        android:textSize="20sp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
+</LinearLayout>

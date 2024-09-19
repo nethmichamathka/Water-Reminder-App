@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/background_color"
+    android:padding="24dp">
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/permission_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gender_title"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text_color"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Shield Icon -->
+    <ImageView
+        android:id="@+id/shield_icon"
+        android:layout_width="288dp"
+        android:layout_height="296dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="@string/shield_icon_description"
+        android:src="@drawable/gender" />
+
+    <!-- Description Text -->
+
+    <!-- Notification Switch -->
+    <Switch
+        android:id="@+id/notification_switch1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notification_switch_male"
+        android:textColor="@color/primary_text_color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:minWidth="48dp"
+        android:padding="8dp" />
+
+    <Switch
+        android:id="@+id/notification_switch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notification_switch_female"
+        android:textColor="@color/primary_text_color"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:minWidth="48dp"
+        android:padding="8dp" />
+
+    <!-- Button: Splash Button -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/button_text"
+        android:textColor="@color/primary_text_color"
+        android:textSize="20sp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp" />
+
+
+</LinearLayout>

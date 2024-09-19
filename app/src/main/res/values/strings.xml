@@ -1,3 +1,102 @@
 <resources>
-    <string name="app_name">Water Reminder</string>
+    <string name="app_name">Splash Reminder</string>
+    <!-- Main -->
+    <string name="header_text">SPLASH</string>
+    <string name="splash_button_text">GO</string>
+    <string name="water_image_description">Water Drop Character</string>
+    <string name="subheading_text">Drink More</string>
+
+    <!-- Sign Up screen strings -->
+    <string name="signup_title">Sign Up</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Password</string>
+    <string name="signup_button_text">Sign Up</string>
+
+    <!-- login strings -->
+    <string name="login_title">Login</string>
+    <string name="name_hint">Name</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="splash_image_description">Splash Image</string>
+
+    <!-- New strings for Toast messages -->
+    <string name="error_empty_fields">Please fill out both fields</string>
+    <string name="login_successful">Login Successful</string>
+
+    <!-- Text Strings page one-->
+    <string name="stay_hydrated">STAY HYDRATED</string>
+    <string name="stay_healthy">STAY HEALTHY</string>
+    <string name="drink_water_for_a_happy_body">DRINK WATER FOR A HAPPY BODY</string>
+    <string name="glass_of_water_description">Glass of water image</string>
+
+    <!-- Text Strings page two-->
+    <string name="water_bottle_title">CARRY A WATER BOTTLE</string>
+    <string name="everyday_text">EVERYDAY</string>
+    <string name="button_text">NEXT</string>
+
+    <!-- Descriptive page 3 -->
+    <string name="remind_text">Remind you to drink water</string>
+    <string name="watch_signs_text">Watch for Signs of Dehydration</string>
+    <string name="add_goals_text">Add daily water goals</string>
+
+    <!-- Descriptive permission -->
+    <string name="permission_title">Permission</string>
+    <string name="shield_icon_description">Shield with a check mark</string>
+    <string name="description_text">Splash requires permission to use</string>
+    <string name="notification_switch_text">Notification</string>
+
+    <!-- Descriptive gender -->
+    <string name="gender_title">Select Gender</string>
+    <string name="notification_switch_male">Male</string>
+    <string name="notification_switch_female">Female</string>
+
+    <!-- Descriptive Wakeup -->
+    <string name="wakeup_title">Select Wake Up Time</string>
+    <string name="wake_time">Wake Up Time : Not Set</string>
+    <string name="select_time">Select Wakeup Time</string>
+
+    <!-- Descriptive bed -->
+    <string name="bed_title">Select Bed Time</string>
+    <string name="bed_time">Bed Time : Not Set</string>
+    <string name="select_bedtime">Select Bed Time</string>
+
+    <!-- dashboard  -->
+
+    <string name="water_reminder_title">WATER REMINDER</string>
+
+    <string name="reminder_text">You need to drink another 1830ml to reach the target</string>
+
+    <string name="progress_initial">0ml</string>
+    <string name="progress_target">1830 ml</string>
+
+    <string name="button_clock">Clock</string>
+    <string name="button_Todo">Todo</string>
+    <string name="button_history">History</string>
+
+    <string name="history_text">History</string>
+
+    <!-- Alarm Time Label -->
+
+    <string name="set_alarm">SET ALARM</string>
+
+    <string name="alarm_time_label1">09:00 AM</string>
+    <string name="alarm_time_label2">10:00 AM</string>
+    <string name="alarm_time_label3">11:00 AM</string>
+    <string name="alarm_time_label4">12:00 AM</string>
+    <string name="alarm_time_label5">16:41 PM</string>
+
+
+
+
+
+    <!-- Repeat Info -->
+    <string name="repeat_info_label">Every day</string>
+
+    <!-- Expandable Dropdown Description (optional) -->
+    <string name="expand_more_description">Expand for more details</string>
+
+
+
+
 </resources>

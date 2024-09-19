@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/background_color">
+
+    <!-- Login title -->
+    <TextView
+        android:id="@+id/login_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_title"
+        android:textSize="32sp"
+        android:textColor="@color/primary_text_color"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp"
+        android:gravity="center" />
+
+    <!-- First input field -->
+    <EditText
+        android:id="@+id/input_name_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name_hint"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/primary_text_color"
+        android:textColorHint="@color/primary_text_color"
+        android:textSize="18sp"
+        android:inputType="textPersonName"
+        android:autofillHints="name" />
+
+    <!-- Second input field -->
+    <EditText
+        android:id="@+id/input_name_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password_hint"
+        android:padding="16dp"
+        android:background="@drawable/rounded_button"
+        android:layout_marginBottom="32dp"
+        android:textColor="@color/primary_text_color"
+        android:textColorHint="@color/primary_text_color"
+        android:textSize="18sp"
+        android:inputType="textPersonName"
+        android:autofillHints="name" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login_button_text"
+        android:textSize="20sp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/primary_text_color"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Splash Image -->
+    <ImageView
+        android:id="@+id/splash_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/splash_image_description"
+        android:src="@drawable/splashdrop" />
+
+</LinearLayout>
