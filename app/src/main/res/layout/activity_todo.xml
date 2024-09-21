@@ -24,12 +24,12 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="136dp"
-        android:layout_height="126dp"
+        android:layout_width="173dp"
+        android:layout_height="166dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="0dp"
-        app:srcCompat="@drawable/add_icon" />
+        app:srcCompat="@drawable/add" />
 
     <!-- TextClock (Optional) -->
 

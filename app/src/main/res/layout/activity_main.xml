@@ -45,13 +45,13 @@
     <!-- Button: Let's Splash -->
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif"
         android:padding="16dp"
         android:text="@string/splash_button_text"
         android:textColor="@color/primary_text_color"
-        android:background="@drawable/rounded_button"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:fontFamily="sans-serif" />
+        android:textSize="18sp" />
 </LinearLayout>

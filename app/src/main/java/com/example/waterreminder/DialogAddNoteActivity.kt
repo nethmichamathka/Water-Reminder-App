@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,14 +26,12 @@ class DialogAddNoteActivity : AppCompatActivity() {
         taskRecyclerView = findViewById(R.id.task_list_recycler_view)
 
         taskAdapter = TaskAdapter(taskList,
-            onEditClick = { task ->
-                // Handle edit task action here
-                // For example, show a dialog to edit the task text
+            onEditClick = { task, position ->
+                showEditTaskDialog(task, position)
             },
-            onDeleteClick = { task ->
-                // Handle delete task action here
-                taskList.remove(task)
-                taskAdapter.notifyDataSetChanged()
+            onDeleteClick = { task, position ->
+                taskList.removeAt(position) // Remove the task at the given position
+                taskAdapter.notifyItemRemoved(position) // Notify the adapter
             }
         )
 
@@ -44,9 +43,31 @@ class DialogAddNoteActivity : AppCompatActivity() {
             if (!TextUtils.isEmpty(taskText)) {
                 val task = Task(taskText, false)
                 taskList.add(task)
-                taskAdapter.notifyDataSetChanged()
+                taskAdapter.notifyDataSetChanged() // Notify the adapter for data change
                 taskInput.text.clear() // Clear input after adding task
             }
         }
+    }
+
+    private fun showEditTaskDialog(task: Task, position: Int) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Edit Task")
+
+        val input = EditText(this)
+        input.setText(task.text) // Prepopulate the input with the current task text
+        builder.setView(input)
+
+        builder.setPositiveButton("Save") { dialog, _ ->
+            val updatedTaskText = input.text.toString()
+            if (!TextUtils.isEmpty(updatedTaskText)) {
+                task.text = updatedTaskText // Update the task text
+                taskAdapter.notifyItemChanged(position) // Notify the adapter to update the specific item
+            }
+            dialog.dismiss()
+        }
+
+        builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
+
+        builder.show()
     }
 }

@@ -9,8 +9,8 @@
     <!-- Edit Text for Note -->
     <EditText
         android:id="@+id/edit_note"
-        android:layout_width="388dp"
-        android:layout_height="604dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/edit_text_background"
         android:hint="Edit your note here"
         android:inputType="textMultiLine"

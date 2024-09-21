@@ -63,9 +63,18 @@ class ClockActivity : AppCompatActivity() {
             this, alarmIndex, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        // Example: Set to 9:00 AM
+        // Set the alarm time based on the index
+        val hour = when (alarmIndex) {
+            0 -> 9 // 9 AM
+            1 -> 10 // 10 AM
+            2 -> 11 // 11 AM
+            3 -> 12 // 12 PM
+            4 -> 13 // 1 PM
+            else -> throw IllegalArgumentException("Invalid alarm index")
+        }
+
         val calendar = Calendar.getInstance().apply {
-            set(Calendar.HOUR_OF_DAY, 9)
+            set(Calendar.HOUR_OF_DAY, hour)
             set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
         }
@@ -73,7 +82,7 @@ class ClockActivity : AppCompatActivity() {
         // Set exact alarm
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
 
-        Toast.makeText(this, "Notification set for 9:00 AM", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Notification set for ${hour % 12} ${if (hour < 12) "AM" else "PM"}", Toast.LENGTH_SHORT).show()
         saveAlarmState(alarmIndex, true)
     }
 

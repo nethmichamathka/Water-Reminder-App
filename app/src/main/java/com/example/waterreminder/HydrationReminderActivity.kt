@@ -11,7 +11,7 @@ class HydrationReminderActivity : AppCompatActivity() {
 
     private lateinit var notificationHelper: NotificationHelper
     private val handler = Handler(Looper.getMainLooper())
-    private val reminderInterval: Long = 2 * 60 * 1000 // 15 minutes in milliseconds
+    private val reminderInterval: Long = 15 * 60 * 1000 // 15 minutes in milliseconds
 
     private val reminderRunnable = object : Runnable {
         override fun run() {

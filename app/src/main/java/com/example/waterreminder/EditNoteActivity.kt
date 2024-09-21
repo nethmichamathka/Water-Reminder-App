@@ -1,4 +1,3 @@
-// EditNoteActivity.kt
 package com.example.waterreminder
 
 import android.app.Activity
@@ -18,22 +17,31 @@ class EditNoteActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_note)
 
+        // Initialize the EditText and Button views
         editNoteEditText = findViewById(R.id.edit_note)
         saveNoteButton = findViewById(R.id.save_note_button)
 
-        // Get the note details from the intent
+        // Get the note details passed from the intent
         val noteText = intent.getStringExtra("NOTE_TEXT")
         noteId = intent.getIntExtra("NOTE_ID", -1)
 
+        // Set the note text in the EditText if available
         editNoteEditText.setText(noteText)
 
+        // Set a click listener for the Save button
         saveNoteButton.setOnClickListener {
             val updatedNoteText = editNoteEditText.text.toString()
+
+            // Create an Intent to return the updated note data to MainActivity
             val resultIntent = Intent().apply {
                 putExtra("NOTE_TEXT", updatedNoteText)
                 putExtra("NOTE_ID", noteId)
             }
+
+            // Set the result as RESULT_OK and attach the updated note data
             setResult(Activity.RESULT_OK, resultIntent)
+
+            // Finish the activity and return to MainActivity
             finish()
         }
     }

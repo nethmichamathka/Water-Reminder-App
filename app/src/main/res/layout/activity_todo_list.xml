@@ -4,34 +4,26 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:background="@color/light_color"
-    android:padding="16dp">
+    android:padding="8dp">
 
-    <!-- Task Text View -->
     <TextView
-        android:id="@+id/task_text_view"
+        android:id="@+id/task_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="16sp"
-        android:textColor="@color/primary_text_color" />
+        android:textSize="16sp"/>
 
-    <!-- Edit Button -->
     <Button
         android:id="@+id/edit_task_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit"
-        android:textColor="@color/primary_text_color"
         android:background="@drawable/rounded_button"
-        android:padding="8dp" />
+        android:text="@string/edit"/>
 
-    <!-- Delete Button -->
     <Button
         android:id="@+id/delete_task_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete"
-        android:textColor="@color/primary_text_color"
         android:background="@drawable/rounded_button"
-        android:padding="8dp" />
+        android:layout_height="wrap_content"
+        android:text="@string/delete"/>
 </LinearLayout>

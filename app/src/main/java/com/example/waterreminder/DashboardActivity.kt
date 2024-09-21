@@ -17,7 +17,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var todoButton: Button
     private lateinit var hydrationReminderButton: Button  // Button for hydration reminder
     private var progressAmount = 0
-    private val maxWaterAmount = 1830 // Example maximum goal in ml
+    private val maxWaterAmount = 2000 // Example maximum goal in ml
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +34,7 @@ class DashboardActivity : AppCompatActivity() {
         updateReminderText()
 
         waterImageView.setOnClickListener {
-            increaseProgress(250)
+            increaseProgress(200)
         }
 
         // Set the click listener for the "TODO" button

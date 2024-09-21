@@ -25,8 +25,8 @@
     <!-- Reminder Container -->
     <LinearLayout
         android:id="@+id/reminder_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="414dp"
+        android:layout_height="425dp"
         android:layout_marginTop="112dp"
         android:orientation="vertical"
         android:padding="16dp"
@@ -42,11 +42,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
-            android:text="@string/reminder_text"
-            android:textStyle="bold"
             android:fontFamily="sans-serif-condensed-light"
+            android:text="@string/reminder_text"
             android:textColor="@color/primary_text_color"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -54,12 +54,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:progressDrawable="@drawable/progress_bar_style"
-            android:progress="50"
+            android:indeterminateOnly="false"
             android:max="100"
-            android:minHeight="40dp"
             android:maxHeight="50dp"
-            android:indeterminateOnly="false" />
+            android:minHeight="40dp"
+            android:progress="50"
+            android:progressDrawable="@drawable/progress_bar_style" />
 
         <!-- Image for Water Glass (Clickable to Increment Progress) -->
         <ImageView
@@ -107,7 +107,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/rounded_button"
             android:paddingStart="30dp"
-            android:paddingLeft="40dp"
+            android:paddingLeft="50dp"
             android:paddingEnd="30dp"
             android:text="@string/button_clock"
             android:textColor="@color/primary_text_color"

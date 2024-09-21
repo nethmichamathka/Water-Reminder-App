@@ -4,7 +4,7 @@
 
     <!-- Permissions -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
         android:allowBackup="true"
@@ -24,9 +24,20 @@
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.TIME_SET" />
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.QUICK_BOOT" />
             </intent-filter>
+        </receiver>
+
+        <!-- TaskWidgetProvider Declaration -->
+        <receiver
+            android:name=".TaskWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
         </receiver>
 
         <!-- Main Activity (Launcher Activity) -->
@@ -54,14 +65,12 @@
         <activity android:name=".DialogAddNoteActivity" />
         <activity android:name=".TodoListActivity" />
         <activity android:name=".HydrationReminderActivity" />
-        <!-- Ensure ClockActivity is declared only once -->
         <activity
             android:name=".ClockActivity"
-            android:exported="true"> <!-- Must be true for launcher activities if you have intent filters -->
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
     </application>

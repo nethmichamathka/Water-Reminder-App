@@ -1,40 +1,61 @@
 package com.example.waterreminder
 
 import android.os.Bundle
+import android.text.TextUtils
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.waterreminder.adapters.TaskAdapter
 import com.example.waterreminder.models.Task
 
 class TodoListActivity : AppCompatActivity() {
 
-    private lateinit var taskAdapter: TaskAdapter
-    private lateinit var taskRecyclerView: RecyclerView
     private val taskList = mutableListOf<Task>()
+    private lateinit var taskContainer: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_todo_list)
+        setContentView(R.layout.dialog_add_note)
 
-        // Initialize RecyclerView
-        taskRecyclerView = findViewById(R.id.task_list_recycler_view)
-        taskRecyclerView.layoutManager = LinearLayoutManager(this)
+        taskContainer = findViewById(R.id.task_input)
+        val addTaskButton: Button = findViewById(R.id.add_task_button)
 
-        // Add 3 tasks to the task list
-        taskList.add(Task("Task 1", false))
-        taskList.add(Task("Task 2", false))
-        taskList.add(Task("Task 3", false))
+        // Add initial tasks
+        addTask("Task 1")
+        addTask("Task 2")
+        addTask("Task 3")
 
-        // Initialize the TaskAdapter and set it to the RecyclerView
-        taskAdapter = TaskAdapter(taskList, onEditClick = { task ->
-            // Handle edit task action here
-            // For example, navigate to an edit screen or open a dialog
-        }, onDeleteClick = { task ->
-            // Handle delete task action here
-            taskList.remove(task)
-            taskAdapter.notifyDataSetChanged() // Notify adapter that the data has changed
-        })
-        taskRecyclerView.adapter = taskAdapter
+        // Add new task button click
+        addTaskButton.setOnClickListener {
+            // Show a simple dialog or input to add a new task
+            val taskText = "New Task" // Replace with user input
+            if (!TextUtils.isEmpty(taskText)) {
+                addTask(taskText)
+            }
+        }
     }
+
+    private fun addTask(taskText: String) {
+        val task = Task(taskText, false)
+        taskList.add(task)
+
+        // Save the updated task list to SharedPreferences
+        saveTasks()
+
+        // Create a new TextView for the task
+        val taskView = LayoutInflater.from(this).inflate(R.layout.activity_todo_list, null)
+        val taskTextView: TextView = taskView.findViewById(R.id.task_container) // Ensure you have the correct ID here
+        taskTextView.text = task.text
+
+        // Add the task view to the container
+        taskContainer.addView(taskView)
+    }
+
+    private fun saveTasks() {
+        TODO("Not yet implemented")
+    }
+
 }
