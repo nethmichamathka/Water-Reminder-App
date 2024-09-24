@@ -1,21 +1,24 @@
-<!-- res/layout/widget_task_list.xml -->
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_task_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/widget_title"
+        android:id="@+id/widget_task_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upcoming Tasks"
-        android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:text="Tasks"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingBottom="8dp"/>
 
+    <!-- Placeholder for dynamic task list -->
     <TextView
         android:id="@+id/widget_task_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"/>
+        android:text="No tasks available"/>
 </LinearLayout>

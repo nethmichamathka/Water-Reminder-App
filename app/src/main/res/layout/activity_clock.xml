@@ -11,6 +11,8 @@
         android:orientation="vertical"
         android:padding="8dp">
 
+       <!-- Customize as needed -->
+
         <TextView
             android:id="@+id/water_reminder_title"
             android:layout_width="wrap_content"
@@ -25,6 +27,16 @@
             android:layout_marginBottom="30dp"
             android:gravity="center_horizontal" />
 
+        <Button
+            android:id="@+id/set_alarms_button"
+            android:layout_marginLeft="94dp"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="SET ALARM"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_button"/>
+
         <!-- Alarm 1 -->
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +49,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
-
 
                 <TextView
                     android:id="@+id/alarm_time_1"
@@ -82,7 +93,6 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-
                 <TextView
                     android:id="@+id/alarm_time_2"
                     android:layout_width="wrap_content"
@@ -126,7 +136,6 @@
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
-
                 <TextView
                     android:id="@+id/alarm_time_3"
                     android:layout_width="wrap_content"
@@ -169,7 +178,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
-
 
                 <TextView
                     android:id="@+id/alarm_time_4"

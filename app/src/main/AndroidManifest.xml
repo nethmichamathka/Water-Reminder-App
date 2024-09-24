@@ -25,19 +25,20 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.TIME_SET" />
                 <action android:name="android.intent.action.QUICK_BOOT" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
         </receiver>
 
         <!-- TaskWidgetProvider Declaration -->
         <receiver
-            android:name=".TaskWidgetProvider"
+            android:name=".TaskListWidget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info" />
+                android:resource="@xml/widget_task_list_info" />
         </receiver>
 
         <!-- Main Activity (Launcher Activity) -->

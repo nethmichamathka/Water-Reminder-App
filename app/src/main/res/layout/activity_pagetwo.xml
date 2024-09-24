@@ -17,7 +17,19 @@
         android:gravity="center"
         android:text="@string/water_bottle_title"
         android:textColor="@color/primary_text_color"
-        android:textSize="30sp"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- Title TextViews -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/water_bottle"
+        android:textColor="@color/primary_text_color"
+        android:textSize="23sp"
         android:textStyle="bold" />
 
     <TextView

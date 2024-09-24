@@ -31,7 +31,8 @@
     <string name="glass_of_water_description">Glass of water image</string>
 
     <!-- Text Strings page two-->
-    <string name="water_bottle_title">CARRY A 200ML WATER BOTTLE.SO YOU CAN CALCULATE YOUR DAILY DRINKS OF WATER</string>
+    <string name="water_bottle_title">CARRY A 2000ML WATER BOTTLE</string>
+    <string name="water_bottle">YOU CAN CALCULATE YOUR DAILY DRINKS OF WATER</string>
     <string name="everyday_text">EVERYDAY</string>
     <string name="button_text">NEXT</string>
 

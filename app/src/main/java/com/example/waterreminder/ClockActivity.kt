@@ -1,23 +1,25 @@
 package com.example.waterreminder
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
+import android.widget.Button
 import android.widget.CompoundButton
 import android.widget.Switch
 import android.widget.TextView
+import android.app.TimePickerDialog
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Calendar
+import java.util.*
 
 class ClockActivity : AppCompatActivity() {
 
     private lateinit var alarmTimeTextViews: List<TextView>
     private lateinit var alarmSwitches: List<Switch>
+    private lateinit var alarmTimes: MutableList<Calendar>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,50 +41,63 @@ class ClockActivity : AppCompatActivity() {
             findViewById(R.id.alarm_switch_5)
         )
 
+        alarmTimes = MutableList(alarmSwitches.size) { Calendar.getInstance() }
+
         alarmSwitches.forEachIndexed { index, switchView ->
             switchView.setOnCheckedChangeListener { _: CompoundButton, isChecked: Boolean ->
-                handleAlarmSwitchChange(index, isChecked)
+                if (isChecked) {
+                    // Optionally, you can auto-open time picker here
+                } else {
+                    cancelAlarm(index)
+                }
             }
+        }
+
+        // Set up the button
+        val setAlarmsButton: Button = findViewById(R.id.set_alarms_button)
+        setAlarmsButton.setOnClickListener {
+            showTimePickerDialog()
         }
 
         setupInitialStates()
     }
 
-    private fun handleAlarmSwitchChange(alarmIndex: Int, isChecked: Boolean) {
-        if (isChecked) {
-            setAlarm(alarmIndex)
-        } else {
-            cancelAlarm(alarmIndex)
+    private fun showTimePickerDialog() {
+        alarmSwitches.forEachIndexed { index, switchView ->
+            if (switchView.isChecked) {
+                val calendar = Calendar.getInstance()
+                val timePicker = TimePickerDialog(this, { _, hourOfDay, minute ->
+                    setAlarm(index, hourOfDay, minute)
+                }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true)
+                timePicker.show()
+            }
         }
     }
 
-    private fun setAlarm(alarmIndex: Int) {
+    @SuppressLint("ScheduleExactAlarm")
+    private fun setAlarm(alarmIndex: Int, hour: Int, minute: Int) {
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(this, AlarmReceiver::class.java)
         val pendingIntent = PendingIntent.getBroadcast(
             this, alarmIndex, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        // Set the alarm time based on the index
-        val hour = when (alarmIndex) {
-            0 -> 9 // 9 AM
-            1 -> 10 // 10 AM
-            2 -> 11 // 11 AM
-            3 -> 12 // 12 PM
-            4 -> 13 // 1 PM
-            else -> throw IllegalArgumentException("Invalid alarm index")
-        }
-
         val calendar = Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, hour)
-            set(Calendar.MINUTE, 0)
+            set(Calendar.MINUTE, minute)
             set(Calendar.SECOND, 0)
+            if (before(Calendar.getInstance())) {
+                add(Calendar.DAY_OF_YEAR, 1) // Schedule for the next day if time has already passed
+            }
         }
 
         // Set exact alarm
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
 
-        Toast.makeText(this, "Notification set for ${hour % 12} ${if (hour < 12) "AM" else "PM"}", Toast.LENGTH_SHORT).show()
+        alarmTimes[alarmIndex] = calendar // Save the alarm time
+        alarmTimeTextViews[alarmIndex].text = String.format("%02d:%02d", hour, minute)
+
+        Toast.makeText(this, "Alarm set for ${hour % 12} ${if (hour < 12) "AM" else "PM"}", Toast.LENGTH_SHORT).show()
         saveAlarmState(alarmIndex, true)
     }
 
@@ -94,13 +109,19 @@ class ClockActivity : AppCompatActivity() {
         )
         alarmManager.cancel(pendingIntent)
 
-        Toast.makeText(this, "Notification cancelled", Toast.LENGTH_SHORT).show()
+        alarmTimeTextViews[alarmIndex].text = "" // Clear the displayed time
+        Toast.makeText(this, "Alarm cancelled", Toast.LENGTH_SHORT).show()
         saveAlarmState(alarmIndex, false)
     }
 
     private fun setupInitialStates() {
         alarmSwitches.forEachIndexed { index, switchView ->
             switchView.isChecked = getSavedAlarmState(index)
+            if (switchView.isChecked) {
+                // Load and display previously saved time
+                val alarmTime = alarmTimes[index]
+                alarmTimeTextViews[index].text = String.format("%02d:%02d", alarmTime.get(Calendar.HOUR_OF_DAY), alarmTime.get(Calendar.MINUTE))
+            }
         }
     }
 
